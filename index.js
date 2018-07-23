@@ -2,7 +2,14 @@
 
 const Hapi = require('hapi');
 
-const server = new Hapi.Server();
+const server = new Hapi.Server({
+  cache:[{
+    name:'redis',
+    engine: require('catbox-redis'),
+    host:'',
+    partition:'cache'
+  }]
+});
 server.connection({ port: process.env.PORT || 3000 });
 
 function startServer() {
