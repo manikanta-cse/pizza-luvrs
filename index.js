@@ -6,7 +6,7 @@ const server = new Hapi.Server({
   cache:[{
     name:'redis',
     engine: require('catbox-redis'),
-    host:'',
+    host:'pizza-redis-cluster.ockxff.ng.0001.usw2.cache.amazonaws.com',
     partition:'cache'
   }]
 });
